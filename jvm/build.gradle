@@ -1,0 +1,6 @@
+dependencies {
+    compile project(":core")
+
+    compile 'io.dropwizard.metrics:metrics-jvm:4.0.3'
+}
+
