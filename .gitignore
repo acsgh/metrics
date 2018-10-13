@@ -1,5 +1,11 @@
 .gradle
-/build/
+build/
+classes/
+
+.directory
+
+*.iml
+.idea/
 
 # Ignore Gradle GUI config
 gradle-app.setting

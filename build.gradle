@@ -1,0 +1,31 @@
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'scala'
+
+
+    sourceCompatibility = 10
+    targetCompatibility = 10
+
+    repositories {
+        mavenCentral()
+    }
+
+    task bundle(type: Copy, dependsOn: 'assemble') {
+        into "build/libs/libs"
+        from configurations.runtime
+    }
+
+    dependencies {
+        compile 'org.scala-lang:scala-library:2.12.7'
+
+        compile 'com.typesafe.akka:akka-actor_2.12:2.5.17'
+        compile 'com.typesafe.akka:akka-slf4j_2.12:2.5.17'
+
+        compile 'org.slf4j:slf4j-api:1.7.25'
+
+
+        compile 'ch.qos.logback:logback-classic:1.2.3'
+
+    }
+}
+
